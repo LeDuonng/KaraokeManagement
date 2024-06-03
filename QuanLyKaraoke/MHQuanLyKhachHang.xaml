@@ -1,0 +1,43 @@
+﻿<Window x:Class="QuanLyKaraoke.MHQuanLyKhachHang"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            WindowStartupLocation="CenterScreen"
+
+        Title="Quản Lý Khách hàng" ResizeMode="NoResize" Height="576" Width="563">
+    <Grid Loaded="Grid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Canvas>
+            <Canvas.Background>
+                <ImageBrush ImageSource="img/bg4.jpg"></ImageBrush>
+            </Canvas.Background>
+            <StackPanel Height="335" Width="536" Canvas.Left="10" Canvas.Top="10">
+                <Label Height="35" Content="Danh sách khách hàng" FontWeight="Bold" Foreground="White" Background="#2B78B0" BorderBrush="Black" BorderThickness="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <DataGrid  IsReadOnly="True" AlternatingRowBackground="#d3dfee"  x:Name="gridKH" ColumnHeaderHeight="30" RowBackground="White" FontSize="15" RowHeight="30" BorderBrush="Black" BorderThickness="1"  Height="304" SelectionChanged="gridKHType_SelectionChanged" Loaded="gridKH_Loaded" />
+            </StackPanel>
+            <Border Height="58" Canvas.Left="10" Canvas.Top="367" Width="275">
+                <Grid>
+                    <Label Content="Mã khách hàng: " FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Label Content="Họ Tên: " FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,32,0,0"/>
+                    <TextBox  Name="tbid" Background="AliceBlue" IsReadOnly="True" TextWrapping="Wrap"  Margin="120,0,0,35"/>
+                    <TextBox  Name="tbname"  TextWrapping="Wrap"  Margin="120,32,0,3"/>
+                </Grid>
+                
+            </Border>
+            <Button Content="Thêm" Canvas.Left="451" Canvas.Top="364" Width="95" Height="33" Click="ThemKH"/>
+            <Button Content="Xóa" Canvas.Left="451" Canvas.Top="407" Width="95" Height="33" Click="Xoa"/>
+            <Button Content="Cập nhật" Canvas.Left="340" Canvas.Top="366" Width="95" Height="33" Click="CapNhat"/>
+            <Border Height="58" Canvas.Left="10" Canvas.Top="440" Width="275">
+                <Grid>
+                    <Label Content="SĐT: " FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="61,0,0,0"/>
+                    <Label Content="Địa chỉ: " FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="45,32,0,0"/>
+                    <TextBox  x:Name="tbsdt" TextWrapping="Wrap"  Margin="120,0,0,35"/>
+                    <TextBox  x:Name="tbdc"  TextWrapping="Wrap"  Margin="120,32,0,-27"/>
+                </Grid>
+
+            </Border>
+            <Button Content="Tra cứu" Canvas.Left="340" Canvas.Top="407" Width="95" Height="33" Click="TraCuu"/>
+        </Canvas>
+    </Grid>
+</Window>

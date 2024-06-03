@@ -1,0 +1,28 @@
+﻿<Window x:Class="QuanLyKaraoke.ChinhSuaSanPham"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            WindowStartupLocation="CenterScreen"
+
+        Title="Chỉnh sửa sản phẩm" Height="366" Width="524" WindowStyle="ToolWindow" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Background="SeaGreen">
+            <Label Name="labelName" Content="Chỉnh sửa sản phẩm" Foreground="White"  HorizontalAlignment="Center" FontSize="15" />
+        </StackPanel>
+        <Canvas Grid.Row="1" Background="AliceBlue">
+            <Label Content="Tên sản phẩm:" FontWeight="Bold" Canvas.Left="94" Canvas.Top="29"/>
+            <Label Content="Mô tả:" FontWeight="Bold" Canvas.Left="94" Canvas.Top="124"/>
+            <TextBox  Name="spName" FontSize="20" Background="LightBlue" Canvas.Left="195"   Canvas.Top="29" Width="195"/>
+            <Label Content="Đơn giá:" FontWeight="Bold" Canvas.Left="94" Canvas.Top="75"/>
+            <TextBox Name="spPrice" Background="LightBlue" FontSize="20" Canvas.Left="195" Canvas.Top="75" Width="195" />
+            <Button Content="OK" Canvas.Left="195" Canvas.Top="235" Width="75" Click="LuuChinhSua" Height="40"/>
+            <Button Content="Hủy" Canvas.Left="315" Canvas.Top="235" Width="75" Click="Button_Click" Height="40"/>
+            <TextBox Name="spDes" FontSize="20" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"  Canvas.Left="195" Background="LightBlue" TextWrapping="Wrap" Text="" Canvas.Top="124" Width="195" Height="91"/>
+
+        </Canvas>
+
+    </Grid>
+</Window>

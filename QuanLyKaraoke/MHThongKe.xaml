@@ -1,0 +1,86 @@
+﻿<Window x:Class="QuanLyKaraoke.MHThongKe"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            WindowStartupLocation="CenterScreen"
+
+        Title="Báo cáo thống kê"  Height="650" Width="1239" Loaded="Window_Loaded">
+
+
+    <Canvas Margin="0,0,0,0" >
+        <Canvas.Background>
+            <ImageBrush ImageSource="img/bg4.jpg"></ImageBrush>
+        </Canvas.Background>
+        <Border BorderBrush="Black" BorderThickness="1" Canvas.Left="30" Canvas.Top="13" Width="275">
+            <Grid Background="AliceBlue">
+                <Label Foreground="White" FontWeight="Bold" Background="#2B78B0" Content="Thời điểm" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,124" />
+                <Border BorderBrush="Silver" BorderThickness="0 0 0 1" Margin="4,42,10,92">
+                    <Grid>
+
+                        <Label Content="Ngày bắt đầu: " FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <DatePicker x:Name="batdau" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,0,0,0"/>
+                    </Grid>
+                </Border>
+                <Border BorderBrush="Silver" BorderThickness="0 0 0 1"  Margin="1,89,10,45">
+                    <Grid>
+                        <DatePicker x:Name="ketthuc" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,0,0,0"/>
+
+
+                        <Label Content="Ngày kết thúc: " FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </Grid>
+                </Border>
+                <Button Content="Xem thống kê" FontSize="15" HorizontalAlignment="Left" Margin="161,131,0,0" VerticalAlignment="Top" Width="102" Height="30" Click="Button_Click"/>
+
+
+            </Grid>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Height="260" Canvas.Left="330" Canvas.Top="10" Width="891">
+            <Grid Background="AliceBlue">
+                <Label Content="Danh sách hóa đơn" Foreground="White"  FontWeight="Bold" Background="#2B78B0" HorizontalContentAlignment="Center" Margin="0,0,0,224"/>
+                <DataGrid  IsReadOnly="True"  AlternatingRowBackground="#d3dfee"  ColumnHeaderHeight="30" RowBackground="White" FontSize="15" RowHeight="30" ColumnWidth="170"  x:Name="gridHoaDon" Margin="0,26,0,44"/>
+                <TextBox    FontSize="15"  Name="txtTotal" Text="0" Width="150" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="694,226,0,0">
+
+                </TextBox>
+            </Grid>
+        </Border>
+        <Border Height="26" Canvas.Left="330"  Canvas.Top="236" Width="385">
+            <Grid>
+                <Label Content="Số lượng hóa đơn: " FontWeight="Bold" VerticalAlignment="Top" Margin="0,0,22,0"/>
+                <Label x:Name="lbSoHoaDon" Content="0" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="123,0,0,0"/>
+
+
+            </Grid>
+        </Border>
+        <Label Content="Tổng tiền: " FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="944" Canvas.Top="236"/>
+        <StackPanel Canvas.Left="330" Orientation="Vertical" Canvas.Top="310" Width="889">
+            <Label BorderBrush="Black" BorderThickness="1" Content="Thống kê bán hàng" Foreground="White"  FontWeight="Bold" HorizontalContentAlignment="Center" Height="35" VerticalContentAlignment="Center" Background="#2B78B0" Width="889"/>
+            <DataGrid IsReadOnly="True"  AlternatingRowBackground="#d3dfee"  BorderBrush="Black" BorderThickness="1" ColumnHeaderHeight="30" RowBackground="White" FontSize="15" RowHeight="30" ColumnWidth="170"  x:Name="gridSanPham" Height="188"/>
+
+            <Border BorderBrush="Black" BorderThickness="1" Height="40" Width="889">
+                <Grid  Background="AliceBlue">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="625"/>
+                        <ColumnDefinition Width="264"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="1" Content="Tổng tiền: " VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Left" Height="26" Margin="0,7" Width="71" />
+                    <TextBox  FontSize="15"  Grid.Column="1" x:Name="txtToTalSP" VerticalAlignment="Center" Text="0" Width="140" IsReadOnly="True" HorizontalAlignment="Right" Margin="0,6,12,10" Height="22" RenderTransformOrigin="0.464,0.273" />
+
+                </Grid>
+
+            </Border>
+
+
+
+        </StackPanel>
+        <StackPanel Height="372" Width="275" Canvas.Left="30" Canvas.Top="201">
+            <Label Height="35" Content="Phòng hát hiện có" FontWeight="Bold" Foreground="White" Background="#2B78B0" BorderBrush="Black" BorderThickness="1"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+            <DataGrid  IsReadOnly="True"  AlternatingRowBackground="#d3dfee"  Name="gridListRom" ColumnHeaderHeight="30" RowBackground="White" FontSize="15" RowHeight="30" BorderBrush="Black" BorderThickness="1"  Height="304" SelectionChanged="gridListRom_SelectionChanged" >
+
+            </DataGrid>
+            <Label Background="AliceBlue" BorderBrush="Black" BorderThickness="1" Height="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        </StackPanel>
+
+
+    </Canvas>
+
+
+</Window>
