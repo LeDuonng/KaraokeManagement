@@ -2071,6 +2071,12 @@
       </summary>
       <value>An object that indicates the PNG image format.</value>
     </member>
+    <member name="P:DevExpress.Drawing.DXImageFormat.Svg">
+      <summary>
+        <para>Gets the Scalable Vector Graphics (SVG) image format.</para>
+      </summary>
+      <value>An object that indicates the SVG image format.</value>
+    </member>
     <member name="P:DevExpress.Drawing.DXImageFormat.Tiff">
       <summary>
         <para>Gets the Tagged Image File Format (TIFF) image format.</para>
@@ -3470,6 +3476,30 @@
         <para>The text is trimmed to the nearest word.</para>
       </summary>
     </member>
+    <member name="T:DevExpress.Drawing.DXSvgImage">
+      <summary>
+        <para>Defines a vector image.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Drawing.DXSvgImage.Clone">
+      <summary>
+        <para>Clones the current DXSvgImage object.</para>
+      </summary>
+      <returns>A copy of the DXSvgImage object.</returns>
+    </member>
+    <member name="M:DevExpress.Drawing.DXSvgImage.Equals(DevExpress.Drawing.DXSvgImage)">
+      <summary>
+        <para>Determines whether the specified object is equal to the current DXSvgImage instance.</para>
+      </summary>
+      <param name="other">An object to compare.</param>
+      <returns>true if the object parameter has the same property values as the current DXSvgImage instance; otherwise, false.</returns>
+    </member>
+    <member name="M:DevExpress.Drawing.DXSvgImage.RotateFlip(DevExpress.Drawing.DXRotateFlipType)">
+      <summary>
+        <para>Rotates and flips the image.</para>
+      </summary>
+      <param name="rotateFlipType">An enumeration value that indicates the rotation and flip type.</param>
+    </member>
     <member name="T:DevExpress.Drawing.DXTextRenderingHint">
       <summary>
         <para>Lists values that indicate the quality of text rendering.</para>
@@ -3646,6 +3676,31 @@
     <member name="N:DevExpress.Drawing.Printing">
       <summary>
         <para>Contains cross-platform counterparts of the System.Drawing.Printing classes not supported in non-Windows environments.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Drawing.Printing.DXDuplexMode">
+      <summary>
+        <para>Lists values that specify the duplex printing mode.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Drawing.Printing.DXDuplexMode.Default">
+      <summary>
+        <para>Default mode (Simplex).</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Drawing.Printing.DXDuplexMode.DuplexLongEdge">
+      <summary>
+        <para>Pages are bound along the long edge of the page.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Drawing.Printing.DXDuplexMode.DuplexShortEdge">
+      <summary>
+        <para>Pages are bound along the short edge of the page.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Drawing.Printing.DXDuplexMode.Simplex">
+      <summary>
+        <para>Printing on one side of the paper.</para>
       </summary>
     </member>
     <member name="T:DevExpress.Drawing.Printing.DXPaperKind">
@@ -4285,6 +4340,46 @@
         <para>Gets or sets the paper width.</para>
       </summary>
       <value>The width of the paper, in hundredths of an inch.</value>
+    </member>
+    <member name="T:DevExpress.Drawing.Printing.DXPrinterSettings">
+      <summary>
+        <para>Contains printer options.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Drawing.Printing.DXPrinterSettings.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Drawing.Printing.DXPrinterSettings"/> class.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Drawing.Printing.DXPrinterSettings.Collate">
+      <summary>
+        <para>Specifies whether the printed document is collated.</para>
+      </summary>
+      <value>true to collate the printed document; otherwise, false</value>
+    </member>
+    <member name="P:DevExpress.Drawing.Printing.DXPrinterSettings.Copies">
+      <summary>
+        <para>Specifies the number of copies.</para>
+      </summary>
+      <value>The number of copies.</value>
+    </member>
+    <member name="P:DevExpress.Drawing.Printing.DXPrinterSettings.Duplex">
+      <summary>
+        <para>Specifies whether and how to print on both sides of the paper.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Drawing.Printing.DXDuplexMode"/> value that specifies the duplex mode.</value>
+    </member>
+    <member name="P:DevExpress.Drawing.Printing.DXPrinterSettings.PageRange">
+      <summary>
+        <para>Specifies the range of pages for printing.</para>
+      </summary>
+      <value>A <see cref="T:System.String"/> that defines the page range.</value>
+    </member>
+    <member name="P:DevExpress.Drawing.Printing.DXPrinterSettings.PrinterName">
+      <summary>
+        <para>Specifies the name of the printer where the document is sent.</para>
+      </summary>
+      <value>A <see cref="T:System.String"/> that is the printer name.</value>
     </member>
     <member name="N:DevExpress.Utils.Svg">
       <summary>

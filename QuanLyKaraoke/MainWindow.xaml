@@ -61,7 +61,7 @@
 
             </MenuItem>
             <Separator/>
-            <MenuItem  Header="Bớt số lượng"  Click="ChiTietSanPham" Margin="3,5">
+            <MenuItem  Header="Chi tiết sản phẩm"  Click="ChiTietSanPham" Margin="3,5">
 
             </MenuItem>
 

@@ -467,6 +467,12 @@
       </summary>
       <value>An <see cref="T:DevExpress.Utils.Localization.XtraLocalizer`1"/> descendant, used to localize the dialog messages at runtime.</value>
     </member>
+    <member name="M:DevExpress.Pdf.Localization.PdfCoreLocalizer.CreateDefaultLocalizer">
+      <summary>
+        <para>Returns a localizer object, which provides resources based on the thread’s language and regional settings (culture).</para>
+      </summary>
+      <returns>An object that represents resources based on the thread’s culture.</returns>
+    </member>
     <member name="M:DevExpress.Pdf.Localization.PdfCoreLocalizer.CreateResXLocalizer">
       <summary>
         <para>For internal use. Returns a Localizer object storing resources based on the thread’s language and regional settings (culture).</para>
@@ -641,6 +647,46 @@
         <para>“The selected index cannot be set because there are no possible values.”</para>
       </summary>
     </member>
+    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionIssueDeviceCmyk">
+      <summary>
+        <para>“DeviceCMYK color space is used without an ICC profile. The default CMYK ICC profile was embedded.”</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionIssueDeviceCmykRgbError">
+      <summary>
+        <para>“DeviceCMYK and DeviceRGB color spaces are used without ICC profiles. Consider converting document to a single device color space or device-independent color space.”</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionIssueDeviceGray">
+      <summary>
+        <para>“DeviceGray color space is used without an ICC profile. The default RGB ICC profile was embedded.”</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionIssueDeviceRgb">
+      <summary>
+        <para>“DeviceRGB color space is used without an ICC profile. The default RGB ICC profile was embedded.”</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionIssueFailedException">
+      <summary>
+        <para>“Possible document format error. Conversion failed with the following exception: {0}.”</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionIssueFontNotFound">
+      <summary>
+        <para>“Failed to resolve font. Check that the following font is available in system: {0}.”</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionIssueFontSubsetEmbedded">
+      <summary>
+        <para>“A subset for the following font was embedded: {0}.”</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgConversionIssueFontSubstituted">
+      <summary>
+        <para>“Font not found: {0}. It was replaced with the following font: {1}. A subset for that font was embedded.”</para>
+      </summary>
+    </member>
     <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgEmptyCustomPropertyName">
       <summary>
         <para>Custom property name cannot be null or empty string.</para>
@@ -679,6 +725,11 @@
     <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgIncorrectAction">
       <summary>
         <para>“The specified action does not belong to the current document.”</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgIncorrectAdditionalMetadata">
+      <summary>
+        <para>“Additional metadata is not recognized as valid value: {0}.”</para>
       </summary>
     </member>
     <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgIncorrectBookmarkListValue">
@@ -919,6 +970,11 @@
     <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgUnsupportedBrushType">
       <summary>
         <para>“Custom brushes are not supported.”</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgUnsupportedConversionCompatibility">
+      <summary>
+        <para>“Conversion to specified compatibility mode is not supported.”</para>
       </summary>
     </member>
     <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgUnsupportedEncryption">
@@ -1929,7 +1985,7 @@
     </member>
     <member name="T:DevExpress.Pdf.PdfAcroFormTextBoxField">
       <summary>
-        <para>Represents a text box field.</para>
+        <para>A text box form field.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Pdf.PdfAcroFormTextBoxField.#ctor(System.String,System.Int32,DevExpress.Pdf.PdfRectangle)">

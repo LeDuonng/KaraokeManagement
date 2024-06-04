@@ -112,7 +112,7 @@ namespace QuanLyKaraoke
 
             Window manHinhThemThongTinDatPhong = new ManHinhThemKhachHangDatPhong();
             //manHinhDatPhong.Closed += new EventHandler(ThemPhongHat_Closed);
-            manHinhThemThongTinDatPhong.Show();
+            manHinhThemThongTinDatPhong.ShowDialog();
         }
 
     }

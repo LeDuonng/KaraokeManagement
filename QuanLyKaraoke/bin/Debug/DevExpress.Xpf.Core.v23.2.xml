@@ -6945,7 +6945,7 @@
       <summary>
         <para>Restores the layout of bars from a stream.</para>
         <para />
-        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Review the following help topic for additional information: <see href="https://docs.devexpress.com/GeneralInformation/404441/security-what-you-need-to-know/safe-deserialization">Safe Deserialization</see>.</para>
+        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Review the following help topic for additional information: <see href="https://docs.devexpress.com/GeneralInformation/404441/security/safe-deserialization">Safe Deserialization</see>.</para>
       </summary>
       <param name="stream">A stream from which the bars’ layout is restored.</param>
     </member>
@@ -6953,7 +6953,7 @@
       <summary>
         <para>Restores the layout of bars from an XML file.</para>
         <para />
-        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Review the following help topic for additional information: <see href="https://docs.devexpress.com/GeneralInformation/404441/security-what-you-need-to-know/safe-deserialization">Safe Deserialization</see>.</para>
+        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Review the following help topic for additional information: <see href="https://docs.devexpress.com/GeneralInformation/404441/security/safe-deserialization">Safe Deserialization</see>.</para>
       </summary>
       <param name="xmlFile">An XML file that contains the layout of bars to be loaded.</param>
     </member>
@@ -17597,7 +17597,7 @@ The default is false.</value>
       <summary>
         <para>Restores the layout of tab items from a stream.</para>
         <para />
-        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Review the following help topic for additional information: <see href="https://docs.devexpress.com/GeneralInformation/404441/security-what-you-need-to-know/safe-deserialization">Safe Deserialization</see>.</para>
+        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Review the following help topic for additional information: <see href="https://docs.devexpress.com/GeneralInformation/404441/security/safe-deserialization">Safe Deserialization</see>.</para>
       </summary>
       <param name="stream">A stream from which the layout of tab items is restored.</param>
     </member>
@@ -17605,7 +17605,7 @@ The default is false.</value>
       <summary>
         <para>Restores the layout of tab items from an XML file.</para>
         <para />
-        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Review the following help topic for additional information: <see href="https://docs.devexpress.com/GeneralInformation/404441/security-what-you-need-to-know/safe-deserialization">Safe Deserialization</see>.</para>
+        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Review the following help topic for additional information: <see href="https://docs.devexpress.com/GeneralInformation/404441/security/safe-deserialization">Safe Deserialization</see>.</para>
       </summary>
       <param name="path">An XML file from that contains the layout of tab items to be loaded.</param>
     </member>
@@ -26579,7 +26579,7 @@ The default is false.</value>
       <summary>
         <para>Restores the layout of the themed window from a stream.</para>
         <para />
-        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Review the following help topic for additional information: <see href="https://docs.devexpress.com/GeneralInformation/404441/security-what-you-need-to-know/safe-deserialization">Safe Deserialization</see>.</para>
+        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Review the following help topic for additional information: <see href="https://docs.devexpress.com/GeneralInformation/404441/security/safe-deserialization">Safe Deserialization</see>.</para>
       </summary>
       <param name="stream">A stream from which the layout of the themed window is restored.</param>
     </member>
@@ -26587,13 +26587,13 @@ The default is false.</value>
       <summary>
         <para>Restores the layout of the themed window from an XML file.</para>
         <para />
-        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Review the following help topic for additional information: <see href="https://docs.devexpress.com/GeneralInformation/404441/security-what-you-need-to-know/safe-deserialization">Safe Deserialization</see>.</para>
+        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Review the following help topic for additional information: <see href="https://docs.devexpress.com/GeneralInformation/404441/security/safe-deserialization">Safe Deserialization</see>.</para>
       </summary>
       <param name="path">An XML file from which the layout of the themed window is restored.</param>
     </member>
     <member name="P:DevExpress.Xpf.Core.ThemedWindow.RoundCorners">
       <summary>
-        <para>Gets or sets whether the <see cref="T:DevExpress.Xpf.Core.ThemedWindow"/> and its desendants have rounded corners. This is a dependency property.</para>
+        <para>Gets or sets whether <see cref="T:DevExpress.Xpf.Core.ThemedWindow"/> instances and descendants in your application have rounded corners.</para>
       </summary>
       <value>true to round <see cref="T:DevExpress.Xpf.Core.ThemedWindow"/> corners; otherwise false.</value>
     </member>
@@ -29681,7 +29681,7 @@ The default is false.</value>
     </member>
     <member name="P:DevExpress.Xpf.Editors.BaseEdit.DisplayTextConverter">
       <summary>
-        <para>Gets or sets a converter used to provide the editor’s display value. This is a dependency property.</para>
+        <para>Gets or sets a converter for the editor’s display value. This is a dependency property.</para>
       </summary>
       <value>An object that implements the <see cref="T:System.Windows.Data.IValueConverter"/> interface.</value>
     </member>
@@ -46407,7 +46407,7 @@ The default is false.</value>
     </member>
     <member name="P:DevExpress.Xpf.Editors.Settings.BaseEditSettings.DisplayTextConverter">
       <summary>
-        <para>Gets or sets a converter used to provide the editor’s display value. This is a dependency property.</para>
+        <para>Gets or sets a converter for the editor’s display value. This is a dependency property.</para>
       </summary>
       <value>An object that implements the <see cref="T:System.Windows.Data.IValueConverter"/> interface.</value>
     </member>

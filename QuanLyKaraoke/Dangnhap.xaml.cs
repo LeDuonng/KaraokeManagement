@@ -39,14 +39,14 @@ namespace QuanLyKaraoke
             if (username == "quanly" && password == "1")
             {
                 MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
                 Window.GetWindow(this).Close();
+                mainWindow.ShowDialog();
             }
             else if (username == "nhanvien" && password == "1")
             {
                 MainWindowNV mainWindownv = new MainWindowNV();
-                mainWindownv.Show();
                 Window.GetWindow(this).Close();
+                mainWindownv.ShowDialog();
             }
             else
             {

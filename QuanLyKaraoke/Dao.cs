@@ -326,7 +326,7 @@ namespace QuanLyKaraoke
         // Lấy đối tượng phòng hát theo id
         // Lấy đối tượng phòng hát theo id
 
-        internal PhongHat LayPhongHatByID(int IDphongHat)
+        public PhongHat LayPhongHatByID(int IDphongHat)
         {
             PhongHat phat = new PhongHat();
             string sql = "SELECT * FROM PHONGHAT WHERE IDPhongHat = " + IDphongHat.ToString();

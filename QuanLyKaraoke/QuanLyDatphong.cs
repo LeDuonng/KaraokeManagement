@@ -35,7 +35,7 @@ namespace QuanLyKaraoke
         {
             foreach (ThongTinDatPhong ttph in listThongTinDatPhong)
             {
-                if (ttph.IDphongHat == idPhongHat)
+                if (ttph.IDphongHat == idPhongHat && ttph.traPhong == false)
                     return ttph;
             }
             return null;
@@ -63,6 +63,19 @@ namespace QuanLyKaraoke
             return true;
 
             
+        }
+        // Trả phòng
+        public void TraPhong(int idPhongHat)
+        {
+            ThongTinDatPhong ttph = LayThongTinDatPhong(idPhongHat);
+            if (ttph != null)
+            {
+                ttph.traPhong = true;
+                ttph.thoiGianRa = DateTime.Now;
+                ttph.TinhTien();
+                Dao dao = new Dao();
+                dao.KhoaPhong(idPhongHat, true);
+            }
         }
         // Gọi thêm sản phẩm vào phòng hát
         public bool GoiSanPham (int idPhongHat, int idSanPham, int soLuong)

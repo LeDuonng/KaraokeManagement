@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace QuanLyKaraoke
 {
     /// <summary>
@@ -28,12 +29,14 @@ namespace QuanLyKaraoke
             currentRoom = ttph;
             
         }
-
         private void CapNhatHienThiPhong()
         {
             if (currentRoom != null)
             {
                 currentRoom.TinhTien();
+                Dao dao = new Dao();
+                lbRoomName.Content = dao.LayPhongHatByID(currentRoom.IDphongHat).tenPhong;
+
                 timeIn.Content = currentRoom.thoiGianVao.ToString();
                 lbTienPhong.Content = currentRoom.tienPhong.ToString("N0", nfi);
                 lbTienSanPham.Content = currentRoom.tienSanPham.ToString("N0", nfi);

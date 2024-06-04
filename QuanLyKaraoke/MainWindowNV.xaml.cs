@@ -223,7 +223,7 @@ namespace QuanLyKaraoke
 
             //Window manHinhDatPhong = new ManhHinhDatPhong(phongHat);
             //manHinhDatPhong.Closed += new EventHandler(ThemPhongHat_Closed);
-            //manHinhDatPhong.Show();
+            //manHinhDatPhong.ShowDialog();
             Dao dao = new Dao();
 
             // Bắt đầu lưu thông tin đặt phòng và tính giờ
@@ -273,7 +273,7 @@ namespace QuanLyKaraoke
         {
             Window manHinhThemPhong = new ManHinhThemPhongHat();
             manHinhThemPhong.Closed += new EventHandler(ThemPhongHat_Closed);
-            manHinhThemPhong.Show();
+            manHinhThemPhong.ShowDialog();
 
         }
 
@@ -302,7 +302,7 @@ namespace QuanLyKaraoke
 
             Window manHinhChinhSua = new ManHinhChinhSuaPhongHat(phongHat);
             manHinhChinhSua.Closed += new EventHandler(ThemPhongHat_Closed);
-            manHinhChinhSua.Show();
+            manHinhChinhSua.ShowDialog();
 
 
         }
@@ -351,7 +351,7 @@ namespace QuanLyKaraoke
             SanPham sp = spButton.Tag as SanPham;
 
             Window chiTietSP = new ChiTietSp(sp);
-            chiTietSP.Show();
+            chiTietSP.ShowDialog();
         }
 
         private void ChinhSuaSanPham(object sender, RoutedEventArgs e)
@@ -365,7 +365,7 @@ namespace QuanLyKaraoke
             Window chinhSuaSp = new ChinhSuaSanPham(sp);
             chinhSuaSp.Closed += new EventHandler(chinhSuaSp_done);
 
-            chinhSuaSp.Show();
+            chinhSuaSp.ShowDialog();
         }
 
         private void chinhSuaSp_done(object sender, EventArgs e)
@@ -405,7 +405,7 @@ namespace QuanLyKaraoke
             Window chinhSuaSp = new ChinhSuaSanPham(null);
             chinhSuaSp.Closed += new EventHandler(chinhSuaSp_done);
 
-            chinhSuaSp.Show();
+            chinhSuaSp.ShowDialog();
         }
 
         //Sử lý sự kiện phòng được nhấp chọn
@@ -543,19 +543,19 @@ namespace QuanLyKaraoke
             if (ttph == null)
                 return;
             ManHinhTinhTien mhtt = new ManHinhTinhTien(ttph);
-            mhtt.Show();
+            mhtt.ShowDialog();
         }
 
         private void XemThongKe(object sender, RoutedEventArgs e)
         {
             MHThongKe thongKe = new MHThongKe();
-            thongKe.Show();
+            thongKe.ShowDialog();
         }
 
         private void QuanLoaiPhongClick(object sender, RoutedEventArgs e)
         {
             MHQuanLyLoaiPhong qllp = new MHQuanLyLoaiPhong();
-            qllp.Show();
+            qllp.ShowDialog();
             qllp.Closed += new EventHandler(ThemPhongHat_Closed);
         }
 
@@ -627,7 +627,7 @@ namespace QuanLyKaraoke
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MHQuanLyKhachHang qlkh = new MHQuanLyKhachHang();
-            qlkh.Show();
+            qlkh.ShowDialog();
         }
     }
 }

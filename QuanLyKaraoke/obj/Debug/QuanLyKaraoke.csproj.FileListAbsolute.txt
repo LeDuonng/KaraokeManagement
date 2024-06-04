@@ -129,3 +129,10 @@ G:\HocTap\Do an cong nghe phan mem\Source\QuanLyKaraoke\QuanLyKaraoke\obj\Debug\
 G:\HocTap\Do an cong nghe phan mem\Source\QuanLyKaraoke\QuanLyKaraoke\obj\Debug\QuanLyKa.06D08CB1.Up2Date
 G:\HocTap\Do an cong nghe phan mem\Source\QuanLyKaraoke\QuanLyKaraoke\obj\Debug\QuanLyKaraoke.exe
 G:\HocTap\Do an cong nghe phan mem\Source\QuanLyKaraoke\QuanLyKaraoke\obj\Debug\QuanLyKaraoke.pdb
+G:\HocTap\Do an cong nghe phan mem\Source\QuanLyKaraoke\QuanLyKaraoke\bin\Debug\DevExpress.Data.Desktop.v23.2.dll
+G:\HocTap\Do an cong nghe phan mem\Source\QuanLyKaraoke\QuanLyKaraoke\bin\Debug\DevExpress.Data.v23.2.dll
+G:\HocTap\Do an cong nghe phan mem\Source\QuanLyKaraoke\QuanLyKaraoke\bin\Debug\DevExpress.Drawing.v23.2.dll
+G:\HocTap\Do an cong nghe phan mem\Source\QuanLyKaraoke\QuanLyKaraoke\bin\Debug\DevExpress.Mvvm.v23.2.dll
+G:\HocTap\Do an cong nghe phan mem\Source\QuanLyKaraoke\QuanLyKaraoke\bin\Debug\DevExpress.Pdf.v23.2.Core.dll
+G:\HocTap\Do an cong nghe phan mem\Source\QuanLyKaraoke\QuanLyKaraoke\bin\Debug\DevExpress.Printing.v23.2.Core.dll
+G:\HocTap\Do an cong nghe phan mem\Source\QuanLyKaraoke\QuanLyKaraoke\bin\Debug\DevExpress.Xpf.Core.v23.2.dll

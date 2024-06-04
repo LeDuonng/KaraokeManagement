@@ -1,7 +1,7 @@
 ﻿<Window x:Class="QuanLyKaraoke.ManHinhCapNhatLoaiPhong"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Màn Hình Cập Nhật Loại Phòng" Height="351" Width="424" WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" Loaded="Window_Loaded">
+        Title="Màn Hình Cập Nhật Loại Phòng" Height="351" Width="424" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

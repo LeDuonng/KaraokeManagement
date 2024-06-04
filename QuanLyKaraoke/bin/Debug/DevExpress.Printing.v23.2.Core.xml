@@ -15341,7 +15341,7 @@
       <summary>
         <para>Gets or sets an object, containing additional information on the current brick.</para>
         <para />
-        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Serializable System.Object properties that contain custom type values are not (de)serialized automatically. Review the following help topic for information on how to (de)serialize custom type values: <see href="https://docs.devexpress.com/GeneralInformation/404441/security-what-you-need-to-know/safe-deserialization">Safe Deserialization</see>.</para>
+        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Serializable System.Object properties that contain custom type values are not (de)serialized automatically. Review the following help topic for information on how to (de)serialize custom type values: <see href="https://docs.devexpress.com/GeneralInformation/404441/security/safe-deserialization">Safe Deserialization</see>.</para>
       </summary>
       <value>Additional information on the current brick.</value>
     </member>
@@ -17766,13 +17766,6 @@
       </summary>
       <returns>An integer value representing the hash code for the current object.</returns>
     </member>
-    <member name="M:DevExpress.XtraPrinting.Drawing.ImageSource.GetImageSize(System.Boolean)">
-      <summary>
-        <para>Gets floating-point width and height of the image the ImageSource object stores.</para>
-      </summary>
-      <param name="useImageResolution">true to use the original image resolution; otherwise false.</param>
-      <returns>An object that provides the floating-point width and height of the image the ImageSource object stores.</returns>
-    </member>
     <member name="P:DevExpress.XtraPrinting.Drawing.ImageSource.Image">
       <summary>
         <para>Returns an image.</para>
@@ -18001,6 +17994,41 @@
       <summary>
         <para>A collection of <see cref="T:DevExpress.XtraPrinting.Drawing.Watermark">watermarks</see>.</para>
       </summary>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.Drawing.WatermarkCollection.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.Drawing.WatermarkCollection"/> class.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.Drawing.WatermarkCollection.AddRange(DevExpress.XtraPrinting.Drawing.Watermark[])">
+      <summary>
+        <para>Adds the specified watermarks to WatermarkCollection.</para>
+      </summary>
+      <param name="items">An array of <see cref="T:DevExpress.XtraPrinting.Drawing.Watermark"/> objects.</param>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.Drawing.WatermarkCollection.Dispose">
+      <summary>
+        <para>Releases all resources used by <see cref="T:DevExpress.XtraPrinting.Drawing.WatermarkCollection"/>.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.Drawing.WatermarkCollection.Item(System.String)">
+      <summary>
+        <para>Provides access to individual items from WatermarkCollection by Id.</para>
+      </summary>
+      <param name="watermarkId">The unique identifier of a watermark.</param>
+      <value>The specified watermark.</value>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.Drawing.WatermarkCollection.RestoreFromStream(System.IO.Stream)">
+      <summary>
+        <para>Restores watermarks added to WatermarkCollection to the specified stream.</para>
+      </summary>
+      <param name="stream">A System.IO.Stream object from which WatermarkCollection is restored.</param>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.Drawing.WatermarkCollection.SaveToStream(System.IO.Stream)">
+      <summary>
+        <para>Saves watermarks added to WatermarkCollection to the specified stream.</para>
+      </summary>
+      <param name="stream">A System.IO.Stream object to which WatermarkCollection is written.</param>
     </member>
     <member name="T:DevExpress.XtraPrinting.Drawing.WatermarkPosition">
       <summary>
@@ -23328,7 +23356,7 @@
       <summary>
         <para>Overrides the <see cref="P:DevExpress.XtraPrinting.VisualBrick.TextValue">VisualBrick.TextValue</see> property.</para>
         <para />
-        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Serializable System.Object properties that contain custom type values are not (de)serialized automatically. Review the following help topic for information on how to (de)serialize custom type values: <see href="https://docs.devexpress.com/GeneralInformation/404441/security-what-you-need-to-know/safe-deserialization">Safe Deserialization</see>.</para>
+        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Serializable System.Object properties that contain custom type values are not (de)serialized automatically. Review the following help topic for information on how to (de)serialize custom type values: <see href="https://docs.devexpress.com/GeneralInformation/404441/security/safe-deserialization">Safe Deserialization</see>.</para>
       </summary>
       <value>A <see cref="T:System.Object"/> which represents the text value that will be shown as the brick’s text.</value>
     </member>
@@ -24238,7 +24266,7 @@
       <summary>
         <para>Gets an object which represents the value that will be shown as the brick’s text.</para>
         <para />
-        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Serializable System.Object properties that contain custom type values are not (de)serialized automatically. Review the following help topic for information on how to (de)serialize custom type values: <see href="https://docs.devexpress.com/GeneralInformation/404441/security-what-you-need-to-know/safe-deserialization">Safe Deserialization</see>.</para>
+        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Serializable System.Object properties that contain custom type values are not (de)serialized automatically. Review the following help topic for information on how to (de)serialize custom type values: <see href="https://docs.devexpress.com/GeneralInformation/404441/security/safe-deserialization">Safe Deserialization</see>.</para>
       </summary>
       <value>A <see cref="T:System.Object"/> which represents the text value that will be shown as the brick’s text.</value>
     </member>
@@ -24681,7 +24709,7 @@
     </member>
     <member name="P:DevExpress.XtraPrinting.WebClientUIControl.DataContracts.DataSourceInfo.Data">
       <summary>
-        <para>Specifies the data serialized to the <see href="https://docs.devexpress.com/XtraReports/2592/detailed-guide-to-devexpress-reporting/store-and-distribute-reports/store-report-layouts-and-documents/store-report-layouts">report layout</see> in JSON format using the <see cref="P:DevExpress.XtraReports.UI.XtraReport.ObjectStorage">XtraReport.ObjectStorage</see> property.</para>
+        <para>Specifies the data serialized to the <see href="https://docs.devexpress.com/XtraReports/2592/detailed-guide-to-devexpress-reporting/store-and-distribute-reports/store-report-layouts-and-documents/store-report-layouts">report layout</see> in JSON format using the XtraReport.ObjectStorage property.</para>
       </summary>
       <value>A <see cref="T:System.String"/> value.</value>
     </member>
@@ -26449,7 +26477,7 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>Specifies the data adapter for the storage that contains the report parameter’s predefined values.</para>
         <para />
-        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Serializable System.Object properties that contain custom type values are not (de)serialized automatically. Review the following help topic for information on how to (de)serialize custom type values: <see href="https://docs.devexpress.com/GeneralInformation/404441/security-what-you-need-to-know/safe-deserialization">Safe Deserialization</see>.</para>
+        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Serializable System.Object properties that contain custom type values are not (de)serialized automatically. Review the following help topic for information on how to (de)serialize custom type values: <see href="https://docs.devexpress.com/GeneralInformation/404441/security/safe-deserialization">Safe Deserialization</see>.</para>
       </summary>
       <value>A <see cref="T:System.Object"/> value.</value>
     </member>
@@ -26463,7 +26491,7 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>Specifies the data source for the storage that contains the report parameter’s predefined values.</para>
         <para />
-        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Serializable System.Object properties that contain custom type values are not (de)serialized automatically. Review the following help topic for information on how to (de)serialize custom type values: <see href="https://docs.devexpress.com/GeneralInformation/404441/security-what-you-need-to-know/safe-deserialization">Safe Deserialization</see>.</para>
+        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Serializable System.Object properties that contain custom type values are not (de)serialized automatically. Review the following help topic for information on how to (de)serialize custom type values: <see href="https://docs.devexpress.com/GeneralInformation/404441/security/safe-deserialization">Safe Deserialization</see>.</para>
       </summary>
       <value>A <see cref="T:System.Object"/> value.</value>
     </member>
@@ -26862,7 +26890,7 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>Specifies the parameter value.</para>
         <para />
-        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Serializable System.Object properties that contain custom type values are not (de)serialized automatically. Review the following help topic for information on how to (de)serialize custom type values: <see href="https://docs.devexpress.com/GeneralInformation/404441/security-what-you-need-to-know/safe-deserialization">Safe Deserialization</see>.</para>
+        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Serializable System.Object properties that contain custom type values are not (de)serialized automatically. Review the following help topic for information on how to (de)serialize custom type values: <see href="https://docs.devexpress.com/GeneralInformation/404441/security/safe-deserialization">Safe Deserialization</see>.</para>
       </summary>
       <value>A <see cref="T:System.Object"/> value.</value>
     </member>
@@ -26982,7 +27010,7 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>Specifies the object that contains data about the report parameter.</para>
         <para />
-        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Serializable System.Object properties that contain custom type values are not (de)serialized automatically. Review the following help topic for information on how to (de)serialize custom type values: <see href="https://docs.devexpress.com/GeneralInformation/404441/security-what-you-need-to-know/safe-deserialization">Safe Deserialization</see>.</para>
+        <para><strong>Security note: </strong>Deserializing layout settings from untrusted resources may create security issues. Serializable System.Object properties that contain custom type values are not (de)serialized automatically. Review the following help topic for information on how to (de)serialize custom type values: <see href="https://docs.devexpress.com/GeneralInformation/404441/security/safe-deserialization">Safe Deserialization</see>.</para>
       </summary>
       <value>An <see cref="T:System.Object"/> that contains data about the report parameter.</value>
     </member>

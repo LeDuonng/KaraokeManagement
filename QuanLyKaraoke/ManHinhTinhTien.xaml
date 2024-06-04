@@ -1,7 +1,7 @@
 ﻿<Window x:Class="QuanLyKaraoke.ManHinhTinhTien"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Tính tiền" Height="611" Width="514" WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" ResizeMode="NoResize" Loaded="Window_Loaded">
+        Title="Tính tiền" Height="611" Width="514" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Canvas>
         <StackPanel Orientation="Horizontal" Margin="0,0,0,541" Background="SeaGreen">
             <Label BorderBrush="Black" BorderThickness="1" Name="lbRoomName" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" FontSize="30" FontFamily="./resources/#Digital-7" Content="P.105"  Foreground="Red" Background="#fcfcc3" Height="40" Width="100"/>
@@ -59,12 +59,12 @@
 
 
         </Grid>
-        <Button Width="100" Height="50" FontSize="15" Content="Thanh toán" Click="Button_Click" Canvas.Left="370" Canvas.Top="450"/>
+        <Button Width="110" Height="50" FontSize="15" Content="Thanh toán" Click="Button_Click" Canvas.Left="370" Canvas.Top="450"/>
 
-        <Button Width="100" Height="50" FontSize="15" Content="In hóa đơn" Canvas.Left="370" Canvas.Top="360" Click="InHoaDon"/>
+        <Button Width="110" Height="50" FontSize="15" Content="In hóa đơn" Canvas.Left="370" Canvas.Top="360" Click="InHoaDon"/>
         <Border BorderBrush="Black" BorderThickness="1" Background="AliceBlue" Canvas.Left="20" Canvas.Top="275" Height="225" Width="310">
             <TextBlock TextWrapping="Wrap" x:Name="tbhoadon"/>
         </Border>
-        <Button Width="100" Height="50" FontSize="15" Content="Tạo hóa đơn " Canvas.Left="370" Canvas.Top="275" Click="HoaDon"/>
+        <Button Width="110" Height="50" FontSize="15" Content="Tạo hóa đơn " Canvas.Left="370" Canvas.Top="275" Click="HoaDon"/>
     </Canvas>
 </Window>

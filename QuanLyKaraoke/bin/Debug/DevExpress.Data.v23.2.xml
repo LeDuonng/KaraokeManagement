@@ -362,6 +362,184 @@
         <para>Contains classes implementing the common data management functionality for DevExpress controls.</para>
       </summary>
     </member>
+    <member name="T:DevExpress.Data.AsyncDownloadPolicy">
+      <summary>
+        <para>Allows you to spot, analyze, and prohibit unwanted download requests.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Data.AsyncDownloadPolicy.AsyncDownloaderCancelEventArgs">
+      <summary>
+        <para>The base class for <see cref="T:DevExpress.Data.AsyncDownloadPolicy.ProbingEventArgs"/> and <see cref="T:DevExpress.Data.AsyncDownloadPolicy.DownloadingEventArgs"/> classes.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Data.AsyncDownloadPolicy.AsyncDownloaderCancelEventArgs.IsTrustedUri">
+      <summary>
+        <para>Gets whether the processed resource is in a “safe” resource whitelist.</para>
+      </summary>
+      <value>true if the resource is in a “safe” resource whitelist; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Data.AsyncDownloadPolicy.AsyncDownloaderCancelEventArgs.ThrowOnNonTrustedUri">
+      <summary>
+        <para>Gets or sets whether to throw an exception for unwanted download requests.</para>
+      </summary>
+      <value>true to throw an exception for unwanted download requests; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Data.AsyncDownloadPolicy.AsyncDownloaderCancelEventArgs.Uri">
+      <summary>
+        <para>Gets the processed resource identifier.</para>
+      </summary>
+      <value>The resource identifier.</value>
+    </member>
+    <member name="T:DevExpress.Data.AsyncDownloadPolicy.AsyncDownloaderEventArgs">
+      <summary>
+        <para>The base class for <see cref="T:DevExpress.Data.AsyncDownloadPolicy.ConfigureHttpClientEventArgs"/> and <see cref="T:DevExpress.Data.AsyncDownloadPolicy.DownloadedEventArgs"/> classes.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Data.AsyncDownloadPolicy.AsyncDownloaderEventArgs.ValueType">
+      <summary>
+        <para>Gets a value that identifies the group of controls to which an individual control (that initiated the download) belongs.</para>
+      </summary>
+      <value>Result type.</value>
+    </member>
+    <member name="E:DevExpress.Data.AsyncDownloadPolicy.ConfigureHttpClient">
+      <summary>
+        <para>Allows you to customize settings of a standard HttpClient component that DevExpress components use to download data (the default proxy, base address, cache size, and more).</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Data.AsyncDownloadPolicy.ConfigureHttpClientEventArgs">
+      <summary>
+        <para>Contains data for the <see cref="E:DevExpress.Data.AsyncDownloadPolicy.ConfigureHttpClient"/> event.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.AsyncDownloadPolicy.ConfigureHttpClientEventArgs.#ctor(System.Net.Http.HttpClient,System.Type)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Data.AsyncDownloadPolicy.ConfigureHttpClientEventArgs"/> class with specified settings.</para>
+      </summary>
+      <param name="client">This value is assigned to the <see cref="P:DevExpress.Data.AsyncDownloadPolicy.ConfigureHttpClientEventArgs.Client"/> property.</param>
+      <param name="valueType">This value is assigned to the <see cref="P:DevExpress.Data.AsyncDownloadPolicy.AsyncDownloaderEventArgs.ValueType"/> property.</param>
+    </member>
+    <member name="P:DevExpress.Data.AsyncDownloadPolicy.ConfigureHttpClientEventArgs.Client">
+      <summary>
+        <para>Gets an HttpClient component that DevExpress components use to download data.</para>
+      </summary>
+      <value>The HttpClient component that DevExpress components use to download data (the default proxy, base address, cache size, etc.).</value>
+    </member>
+    <member name="F:DevExpress.Data.AsyncDownloadPolicy.DefaultBufferSizeForContentCopy">
+      <summary>
+        <para>Gets or sets the size of the buffer.</para>
+      </summary>
+      <value>The size, in bytes, of the buffer.</value>
+    </member>
+    <member name="F:DevExpress.Data.AsyncDownloadPolicy.DefaultResponseContentBufferSizeForHttpClient">
+      <summary>
+        <para>Specifies the number of bytes to buffer when reading the response content.</para>
+      </summary>
+      <value>An integer value that specifies the number of bytes to buffer when reading the response content.</value>
+    </member>
+    <member name="E:DevExpress.Data.AsyncDownloadPolicy.Downloaded">
+      <summary>
+        <para>Fires once the download has completed.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Data.AsyncDownloadPolicy.DownloadedEventArgs">
+      <summary>
+        <para>Contains data for the <see cref="E:DevExpress.Data.AsyncDownloadPolicy.Downloaded"/> event.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.AsyncDownloadPolicy.DownloadedEventArgs.#ctor(System.Uri,System.Type,System.Object)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Data.AsyncDownloadPolicy.DownloadedEventArgs"/> class with specified settings.</para>
+      </summary>
+      <param name="uri">The loaded resource identifier. This value is assigned to the <see cref="P:DevExpress.Data.AsyncDownloadPolicy.DownloadedEventArgs.Uri"/> property.</param>
+      <param name="valueType">This value is assigned to the <see cref="P:DevExpress.Data.AsyncDownloadPolicy.AsyncDownloaderEventArgs.ValueType"/> property.</param>
+      <param name="result">The downloaded resource (object). This value is assigned to the <see cref="P:DevExpress.Data.AsyncDownloadPolicy.DownloadedEventArgs.Result"/> property.</param>
+    </member>
+    <member name="P:DevExpress.Data.AsyncDownloadPolicy.DownloadedEventArgs.Result">
+      <summary>
+        <para>Gets the downloaded resource (object).</para>
+      </summary>
+      <value>The downloaded resource (object).</value>
+    </member>
+    <member name="P:DevExpress.Data.AsyncDownloadPolicy.DownloadedEventArgs.Uri">
+      <summary>
+        <para>Gets the identifier of the downloaded resource.</para>
+      </summary>
+      <value>The resource identifier.</value>
+    </member>
+    <member name="E:DevExpress.Data.AsyncDownloadPolicy.Downloading">
+      <summary>
+        <para>Allows you to spot an initiated download, check connection parameters, and cancel (or allow, if the <see cref="M:DevExpress.Data.AsyncDownloadPolicy.SuppressAll"/> policy is active) the operation.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Data.AsyncDownloadPolicy.DownloadingEventArgs">
+      <summary>
+        <para>Contains data for the <see cref="E:DevExpress.Data.AsyncDownloadPolicy.Downloading"/> event.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.AsyncDownloadPolicy.DownloadingEventArgs.#ctor(System.Uri,System.Predicate{System.Uri},System.String,System.Type)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Data.AsyncDownloadPolicy.DownloadingEventArgs"/> class with specified settings.</para>
+      </summary>
+      <param name="uri">The processed resource. This value is assigned to the <see cref="P:DevExpress.Data.AsyncDownloadPolicy.AsyncDownloaderCancelEventArgs.Uri"/> property.</param>
+      <param name="method">The HTTP method. This value is assigned to the <see cref="P:DevExpress.Data.AsyncDownloadPolicy.DownloadingEventArgs.Method"/> property.</param>
+      <param name="valueType">Result type. This value is assigned to the <see cref="P:DevExpress.Data.AsyncDownloadPolicy.DownloadingEventArgs.ValueType"/> property.</param>
+    </member>
+    <member name="P:DevExpress.Data.AsyncDownloadPolicy.DownloadingEventArgs.Method">
+      <summary>
+        <para>Gets the HTTP method.</para>
+      </summary>
+      <value>The HTTP method name (for example, ‘GET’).</value>
+    </member>
+    <member name="P:DevExpress.Data.AsyncDownloadPolicy.DownloadingEventArgs.ValueType">
+      <summary>
+        <para>Gets a value that identifies the group of controls to which an individual control (that initiated the download) belongs.</para>
+      </summary>
+      <value>Result type.</value>
+    </member>
+    <member name="P:DevExpress.Data.AsyncDownloadPolicy.IsThrowAlwaysMode">
+      <summary>
+        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.AsyncDownloadPolicy.IsTrustedUri(System.Uri,DevExpress.Security.Resources.AccessSettings)">
+      <summary>
+        <para>Indicates whether the specified resource is trusted.</para>
+      </summary>
+      <param name="uri">The resource.</param>
+      <returns>true if the specified resource is trusted; otherwise, false.</returns>
+    </member>
+    <member name="E:DevExpress.Data.AsyncDownloadPolicy.Probing">
+      <summary>
+        <para>Allows you to spot the probing of external resources before an actual attempt to download data.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Data.AsyncDownloadPolicy.ProbingEventArgs">
+      <summary>
+        <para>Contains data for the <see cref="E:DevExpress.Data.AsyncDownloadPolicy.Probing"/> event.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.AsyncDownloadPolicy.ProbingEventArgs.#ctor(System.Uri,System.Predicate{System.Uri})">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Data.AsyncDownloadPolicy.ProbingEventArgs"/> class with specified settings.</para>
+      </summary>
+      <param name="uri">The processed resource. This value is assigned to the <see cref="P:DevExpress.Data.AsyncDownloadPolicy.AsyncDownloaderCancelEventArgs.Uri"/> property.</param>
+    </member>
+    <member name="M:DevExpress.Data.AsyncDownloadPolicy.RegisterTrustedUri(System.Uri)">
+      <summary>
+        <para>Trusts the specified resource.</para>
+      </summary>
+      <param name="uri">The trusted resource.</param>
+    </member>
+    <member name="M:DevExpress.Data.AsyncDownloadPolicy.SuppressAll">
+      <summary>
+        <para>Suppresses all downloads.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.AsyncDownloadPolicy.ThrowAlways">
+      <summary>
+        <para>Throws an exception when a control initiates a download.</para>
+      </summary>
+    </member>
     <member name="N:DevExpress.Data.Browsing">
       <summary>
         <para>Contains classes that assist in obtaining information about a data source.</para>
@@ -6333,6 +6511,28 @@
       <param name="sender">The event sender.</param>
       <param name="e">A <see cref="T:DevExpress.Data.SelectionChangedEventArgs"/> object that contains event data.</param>
     </member>
+    <member name="T:DevExpress.Data.SelectionChangingEventArgs">
+      <summary>
+        <para>Contains data for the <see cref="E:DevExpress.XtraGrid.Views.Base.ColumnView.SelectionChanging"/> event.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.SelectionChangingEventArgs.#ctor(System.ComponentModel.CollectionChangeAction,System.Int32)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Data.SelectionChangingEventArgs"/> class with specified settings.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Data.SelectionChangingEventArgs.Action">
+      <summary>
+        <para>Gets an action that describes how the collection of selected rows is about to change.</para>
+      </summary>
+      <value>Specifies how the collection of selected rows is about to change.</value>
+    </member>
+    <member name="P:DevExpress.Data.SelectionChangingEventArgs.ControllerRow">
+      <summary>
+        <para>Gets the processed row handle.</para>
+      </summary>
+      <value>The processed row handle.</value>
+    </member>
     <member name="T:DevExpress.Data.ServerModeExceptionThrownEventArgs">
       <summary>
         <para>Provides data for the <see cref="E:DevExpress.Data.Linq.LinqServerModeDataSource.ExceptionThrown">LinqServerModeDataSource.ExceptionThrown</see> event.</para>
@@ -7385,7 +7585,7 @@
     </member>
     <member name="N:DevExpress.Data.WizardFramework">
       <summary>
-        <para>Provides basic functionality to the Report Wizard pages in <see href="https://docs.devexpress.com/XtraReports/114677/winforms-reporting/end-user-report-designer-for-winforms/gui/report-wizard">WinForms</see> and <see href="https://docs.devexpress.com/XtraReports/114841/wpf-reporting/end-user-report-designer-for-wpf/gui/report-wizard">WPF</see> applications.</para>
+        <para>Provides basic functionality to the Report Wizard pages in <see href="https://docs.devexpress.com/XtraReports/114677/desktop-reporting/winforms-reporting/end-user-report-designer-for-winforms/gui/report-wizard">WinForms</see> and <see href="https://docs.devexpress.com/XtraReports/114841/desktop-reporting/wpf-reporting/end-user-report-designer-for-wpf/gui/report-wizard">WPF</see> applications.</para>
       </summary>
     </member>
     <member name="T:DevExpress.Data.WizardFramework.IWizardModel">
@@ -7882,6 +8082,42 @@
       </summary>
       <returns>A <see cref="T:System.Xml.Linq.XElement"/> value containing an XML definition of the data source schema.</returns>
     </member>
+    <member name="T:DevExpress.DataAccess.IDataSourceProtectionService">
+      <summary>
+        <para>Allows you to implement your own encryption mechanism to store data source information when serialized objects are sent between the client and the server.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.DataAccess.IDataSourceProtectionService.Protect(System.Xml.Linq.XElement)">
+      <summary>
+        <para>Cryptographically protects the specified XML element.</para>
+      </summary>
+      <param name="dataSourceXElement">An XML element to protect.</param>
+    </member>
+    <member name="M:DevExpress.DataAccess.IDataSourceProtectionService.Unprotect(System.Xml.Linq.XElement)">
+      <summary>
+        <para>Cryptographically unprotects the specified XML element.</para>
+      </summary>
+      <param name="dataSourceXElement">The original, not encrypted XML element.</param>
+    </member>
+    <member name="T:DevExpress.DataAccess.ISecureDataConverter">
+      <summary>
+        <para>Encrypts and decrypts any critical string data.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.DataAccess.ISecureDataConverter.Protect(System.String)">
+      <summary>
+        <para>Cryptographically protects the specified string data.</para>
+      </summary>
+      <param name="entity">The string data to protect.</param>
+      <returns>A string that is the protected initial string data.</returns>
+    </member>
+    <member name="M:DevExpress.DataAccess.ISecureDataConverter.Unprotect(System.String)">
+      <summary>
+        <para>Cryptographically unprotects the specified string data.</para>
+      </summary>
+      <param name="protectedEntity">The protected data to unprotect.</param>
+      <returns>The original form of protected data.</returns>
+    </member>
     <member name="N:DevExpress.DataAccess.Wizard">
       <summary>
         <para>Contains classes that are required to customize a data source connection wizard.</para>
@@ -8218,6 +8454,12 @@
         <para>Adds a new reference by an assembly file path.</para>
       </summary>
       <param name="assemblyPath">A <see cref="T:System.String"/> specifying the path to an assembly file.</param>
+    </member>
+    <member name="P:DevExpress.Entity.ProjectModel.ISolutionTypesProvider.CurrentProjectTypes">
+      <summary>
+        <para>Gets types from the project that contains the opened report.</para>
+      </summary>
+      <value>An <see cref="T:DevExpress.Entity.ProjectModel.IProjectTypes"/> object that provides access to project types.</value>
     </member>
     <member name="M:DevExpress.Entity.ProjectModel.ISolutionTypesProvider.FindType(System.Predicate{DevExpress.Entity.ProjectModel.IDXTypeInfo})">
       <summary>
@@ -9157,9 +9399,227 @@
     </member>
     <member name="P:DevExpress.Utils.AzureCompatibility.Enable">
       <summary>
-        <para>Specifies whether or not the PDF export mode is <see href="https://docs.devexpress.com/XtraReports/10769/web-reporting/general-information-on-web-reporting/microsoft-azure-reporting">Azure-compatible</see>.</para>
+        <para>Specifies whether or not the PDF export mode is <see href="https://docs.devexpress.com/XtraReports/10769/cloud-integration/microsoft-azure-reporting">Azure-compatible</see>.</para>
       </summary>
       <value>true if the PDF export is Azure-compatible; otherwise false.</value>
+    </member>
+    <member name="T:DevExpress.Utils.BindToTypePolicy">
+      <summary>
+        <para>Allows you to inspect assemblies/types and cancel the load operation or type resolution based on a specific condition.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Utils.BindToTypePolicy.BindToTypeBaseQueryArgs">
+      <summary>
+        <para>The base class for <see cref="T:DevExpress.Utils.BindToTypePolicy.QueryAssemblyLoadEventArgs"/>, <see cref="T:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs"/>, and <see cref="T:DevExpress.Utils.BindToTypePolicy.QueryNonTrustedTypeValidationEventArgs"/> classes.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Utils.BindToTypePolicy.BindToTypeBaseQueryArgs.AssemblyName">
+      <summary>
+        <para>Gets the assembly name.</para>
+      </summary>
+      <value>The assembly name.</value>
+    </member>
+    <member name="P:DevExpress.Utils.BindToTypePolicy.BindToTypeBaseQueryArgs.IsKnownType">
+      <summary>
+        <para>Gets whether the type is whitelisted (the type is safe).</para>
+      </summary>
+      <value>true if the loaded type is safe; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Utils.BindToTypePolicy.BindToTypeBaseQueryArgs.QueryLevel">
+      <summary>
+        <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
+      </summary>
+      <value>The query level.</value>
+    </member>
+    <member name="M:DevExpress.Utils.BindToTypePolicy.DenyAssemblyLoading">
+      <summary>
+        <para>Prevents dynamic loading of assemblies by DevExpress UI elements.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.BindToTypePolicy.DenyAssemblyLoadingFromFilesAndBytes">
+      <summary>
+        <para>Prevents DevExpress UI controls from loading assemblies from arbitrary paths and Byte arrays (Assembly.LoadFile(String), Assembly.Load(Byte[])).</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Utils.BindToTypePolicy.LoadLevel">
+      <summary>
+        <para>Lists values that correspond to load levels (supports the internal infrastructure and is not intended to be used directly from your code).</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.Utils.BindToTypePolicy.QueryAssemblyLoad">
+      <summary>
+        <para>Allows you to spot an “unknown” assembly before it is loaded, check its name, and allow or cancel the operation.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Utils.BindToTypePolicy.QueryAssemblyLoadEventArgs">
+      <summary>
+        <para>Contains data for the <see cref="E:DevExpress.Utils.BindToTypePolicy.QueryAssemblyLoad"/> event.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.BindToTypePolicy.QueryAssemblyLoadEventArgs.#ctor(System.String,DevExpress.Utils.BindToTypePolicy.QueryLevel,DevExpress.Utils.BindToTypePolicy.LoadLevel)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Utils.BindToTypePolicy.QueryAssemblyLoadEventArgs"/> class with specified settings.</para>
+      </summary>
+      <param name="assemblyName">The assembly name. This value is assigned to the <see cref="P:DevExpress.Utils.BindToTypePolicy.BindToTypeBaseQueryArgs.AssemblyName"/> property.</param>
+      <param name="level">This value is assigned to the <see cref="P:DevExpress.Utils.BindToTypePolicy.BindToTypeBaseQueryArgs.QueryLevel"/> property.</param>
+      <param name="loadLevel">This value is assigned to the <see cref="P:DevExpress.Utils.BindToTypePolicy.QueryAssemblyLoadEventArgs.LoadLevel"/> property.</param>
+    </member>
+    <member name="P:DevExpress.Utils.BindToTypePolicy.QueryAssemblyLoadEventArgs.Assembly">
+      <summary>
+        <para>Gets or sets the assembly.</para>
+      </summary>
+      <value>The assembly.</value>
+    </member>
+    <member name="P:DevExpress.Utils.BindToTypePolicy.QueryAssemblyLoadEventArgs.LoadLevel">
+      <summary>
+        <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
+      </summary>
+      <value>The load level.</value>
+    </member>
+    <member name="M:DevExpress.Utils.BindToTypePolicy.QueryAssemblyLoadEventArgs.ToString">
+      <summary>
+        <para>Returns a string in the following format: Load Level: {LoadLevel}, Requested Assembly: {AssemblyName}.</para>
+      </summary>
+      <returns>A string representation of the current object.</returns>
+    </member>
+    <member name="E:DevExpress.Utils.BindToTypePolicy.QueryBindToType">
+      <summary>
+        <para>Allows you to spot dynamic loading of a type, check its name and assembly, and allow the type resolve operation.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs">
+      <summary>
+        <para>Contains data for the <see cref="E:DevExpress.Utils.BindToTypePolicy.QueryBindToType"/> event.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs.#ctor(System.Reflection.Assembly,System.String,DevExpress.Utils.BindToTypePolicy.QueryLevel)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs"/> class with specified settings.</para>
+      </summary>
+      <param name="assembly">The assembly that contains the processed type. This value is assigned to the <see cref="P:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs.Assembly"/> property.</param>
+      <param name="typeName">The type name. This value is assigned to the <see cref="P:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs.TypeName"/> property.</param>
+      <param name="level">This value is assigned to the <see cref="P:DevExpress.Utils.BindToTypePolicy.BindToTypeBaseQueryArgs.QueryLevel"/> property.</param>
+    </member>
+    <member name="M:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs.#ctor(System.String,System.String,DevExpress.Utils.BindToTypePolicy.QueryLevel)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs"/> class with specified settings.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs.#ctor(System.Type)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs"/> class with specified settings.</para>
+      </summary>
+      <param name="assemblyType">The assembly-qualified name of the type. This value is assigned to the <see cref="P:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs.AssemblyQualifiedTypeName"/> property.</param>
+    </member>
+    <member name="P:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs.Assembly">
+      <summary>
+        <para>Gets the assembly that contains the processed type.</para>
+      </summary>
+      <value>The assembly that contains the processed type.</value>
+    </member>
+    <member name="P:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs.AssemblyQualifiedTypeName">
+      <summary>
+        <para>Gets the assembly-qualified name of the type, which includes the name of the assembly from which this Type object is being loaded.</para>
+      </summary>
+      <value>The assembly-qualified name of the type.</value>
+    </member>
+    <member name="M:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs.ToString">
+      <summary>
+        <para>Returns a string in the following format: “Query Level: {QueryLevel.ToString()}, Requested Type: {AssemblyQualifiedTypeName}”.</para>
+      </summary>
+      <returns>A string representation of the current object.</returns>
+    </member>
+    <member name="P:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs.Type">
+      <summary>
+        <para>Gets or sets the type.</para>
+      </summary>
+      <value>The type.</value>
+    </member>
+    <member name="P:DevExpress.Utils.BindToTypePolicy.QueryBindToTypeEventArgs.TypeName">
+      <summary>
+        <para>Gets the type name.</para>
+      </summary>
+      <value>The type name.</value>
+    </member>
+    <member name="T:DevExpress.Utils.BindToTypePolicy.QueryLevel">
+      <summary>
+        <para>Lists values that correspond to query levels (supports the internal infrastructure and is not intended to be used directly from your code).</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.Utils.BindToTypePolicy.QueryNonTrustedTypeValidation">
+      <summary>
+        <para>Allows you to validate blacklisted and “unknown” types.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Utils.BindToTypePolicy.QueryNonTrustedTypeValidationEventArgs">
+      <summary>
+        <para>Contains data for the <see cref="E:DevExpress.Utils.BindToTypePolicy.QueryNonTrustedTypeValidation"/> event.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Utils.BindToTypePolicy.QueryNonTrustedTypeValidationEventArgs.AssemblyQualifiedTypeName">
+      <summary>
+        <para>Gets the assembly-qualified name of the type, which includes the name of the assembly from which this Type object is being loaded.</para>
+      </summary>
+      <value>The assembly-qualified name of the type.</value>
+    </member>
+    <member name="M:DevExpress.Utils.BindToTypePolicy.QueryNonTrustedTypeValidationEventArgs.DoNotTrustThisType">
+      <summary>
+        <para>Specifies that the custom (“unknown”) type is “unsafe” and throws a security warning.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Utils.BindToTypePolicy.QueryNonTrustedTypeValidationEventArgs.IsKnownTypeDescendant">
+      <summary>
+        <para>Gets whether the type derives from the “safe” type.</para>
+      </summary>
+      <value>true if the type derives from the safe type; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Utils.BindToTypePolicy.QueryNonTrustedTypeValidationEventArgs.IsMalformedOrCorrupted">
+      <summary>
+        <para>Gets whether the type is malformed (invalid).</para>
+      </summary>
+      <value>true if the type is malformed; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Utils.BindToTypePolicy.QueryNonTrustedTypeValidationEventArgs.IsUnsafe">
+      <summary>
+        <para>Gets whether the type is unsafe.</para>
+      </summary>
+      <value>true if the type is unsafe; otherwise, false.</value>
+    </member>
+    <member name="M:DevExpress.Utils.BindToTypePolicy.QueryNonTrustedTypeValidationEventArgs.TrustThisType(System.Boolean)">
+      <summary>
+        <para>Specifies that the custom (“unknown”) type is “safe” and suppresses a security warning.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Utils.BindToTypePolicy.QueryNonTrustedTypeValidationEventArgs.TypeName">
+      <summary>
+        <para>Gets the type name.</para>
+      </summary>
+      <value>The type name.</value>
+    </member>
+    <member name="M:DevExpress.Utils.BindToTypePolicy.RegisterTrustedType(System.String,System.Type)">
+      <summary>
+        <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
+      </summary>
+      <param name="assemblyQualifiedTypeName">The assembly-qualified name of the type.</param>
+      <param name="type">The type.</param>
+    </member>
+    <member name="M:DevExpress.Utils.BindToTypePolicy.RegisterTrustedType(System.Type)">
+      <summary>
+        <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
+      </summary>
+      <param name="type">The type.</param>
+    </member>
+    <member name="M:DevExpress.Utils.BindToTypePolicy.UnregisterTrustedType(System.String)">
+      <summary>
+        <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
+      </summary>
+      <param name="assemblyQualifiedTypeName">The assembly-qualified name of the type.</param>
+    </member>
+    <member name="M:DevExpress.Utils.BindToTypePolicy.UnregisterTrustedType(System.Type)">
+      <summary>
+        <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
+      </summary>
+      <param name="type">The type.</param>
     </member>
     <member name="N:DevExpress.Utils.Commands">
       <summary>
@@ -9418,6 +9878,77 @@
       <summary>
         <para>The value is true.</para>
       </summary>
+    </member>
+    <member name="M:DevExpress.Utils.DeserializationSettings.DenyBinaryFormatter">
+      <summary>
+        <para>Disables BinaryFormatter deserialization in the application to address BinaryFormatter Obsoletion Strategy.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.DeserializationSettings.EnableSafeDeserialization">
+      <summary>
+        <para>This member is for advanced configuration. It supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.DeserializationSettings.InvokeRestricted(System.Action,System.Predicate{DevExpress.Utils.DeserializationSettings.RestrictedTypeConfirmationEventArgs})">
+      <summary>
+        <para>This member is for advanced configuration. It supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.DeserializationSettings.InvokeRestricted(System.Action)">
+      <summary>
+        <para>This member is for advanced configuration. It supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.DeserializationSettings.InvokeRestrictedIfNotAlreadyInTrustedContext(System.Action,System.Predicate{DevExpress.Utils.DeserializationSettings.RestrictedTypeConfirmationEventArgs})">
+      <summary>
+        <para>This member is for advanced configuration. It supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.DeserializationSettings.InvokeTrusted(System.Action)">
+      <summary>
+        <para>Turns off safe deserialization for a certain section of code.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.DeserializationSettings.InvokeWithBinaryFormatterDenied(System.Action)">
+      <summary>
+        <para>This member is for advanced configuration. It supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.DeserializationSettings.InvokeWithForcedDXBinaryFormatter(System.Action)">
+      <summary>
+        <para>This member is for advanced configuration. It supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.DeserializationSettings.RegisterTrustedAssembly(System.Reflection.Assembly)">
+      <summary>
+        <para>Enables deserialization of all data types from the specified assembly.</para>
+      </summary>
+      <param name="assembly">The assembly.</param>
+    </member>
+    <member name="M:DevExpress.Utils.DeserializationSettings.RegisterTrustedAssembly(System.String)">
+      <summary>
+        <para>Enables deserialization of all data types from the assembly with the specified name.</para>
+      </summary>
+      <param name="assemblyName">The assembly name.</param>
+    </member>
+    <member name="M:DevExpress.Utils.DeserializationSettings.RegisterTrustedClass(System.String,System.String)">
+      <summary>
+        <para>Enables deserialization of the specified data type in the specified assembly.</para>
+      </summary>
+      <param name="assemblyName">The assembly name.</param>
+      <param name="typeName">The data type name.</param>
+    </member>
+    <member name="M:DevExpress.Utils.DeserializationSettings.RegisterTrustedClass(System.String)">
+      <summary>
+        <para>Enables deserialization of the specified data type.</para>
+      </summary>
+      <param name="typeName">The type name.</param>
+    </member>
+    <member name="M:DevExpress.Utils.DeserializationSettings.RegisterTrustedClass(System.Type)">
+      <summary>
+        <para>Enables deserialization of the specified data type.</para>
+      </summary>
+      <param name="type">The custom data type.</param>
     </member>
     <member name="T:DevExpress.Utils.DXCollection`1">
       <summary>
@@ -10981,6 +11512,159 @@
         <para>Represents classes, that implement basic functionality for localization of <see href="https://docs.devexpress.com/WindowsForms/2405/build-an-application/localization">Windows Forms</see> and <see href="https://docs.devexpress.com/AspNet/6909/common-concepts/localization">ASP.NET</see> controls.</para>
       </summary>
     </member>
+    <member name="T:DevExpress.Utils.Localization.CoreLibraryResources">
+      <summary>
+        <para>Contains localization strings from cross-platform assemblies used in Devexpress web and desktop controls.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Utils.Localization.XtraLocalizer">
+      <summary>
+        <para>Includes a comprehensive API to localize DevExpress UI controls.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.Localization.XtraLocalizer.CreateComponentResourceManager(System.Type)">
+      <summary>
+        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+      <param name="containerType">The container (form) type.</param>
+      <returns>The resource manager.</returns>
+    </member>
+    <member name="M:DevExpress.Utils.Localization.XtraLocalizer.CreateResourceManager``1(DevExpress.Utils.Localization.XtraResXLocalizer{``0},System.String,System.Type)">
+      <summary>
+        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+      <param name="resXLocalizer">The localizer object.</param>
+      <returns>The resource manager.</returns>
+    </member>
+    <member name="M:DevExpress.Utils.Localization.XtraLocalizer.EnableTraceSource(System.String)">
+      <summary>
+        <para>Allows the <see href="https://docs.devexpress.com/GeneralInformation/404609/localization/ui-localization-client">UI Localization Client</see> to attach to the application.</para>
+      </summary>
+      <param name="applicationName">The application name. Specify this parameter if the UI Localization Client cannot automatically obtain the application name.</param>
+      <returns>true if the application has been detected (the trace source was created); otherwise, false.</returns>
+    </member>
+    <member name="M:DevExpress.Utils.Localization.XtraLocalizer.EnterTraceMode(System.String)">
+      <summary>
+        <para>Create the trace source and allows the <see href="https://docs.devexpress.com/GeneralInformation/404609/localization/ui-localization-client">UI Localization Client</see> to attach to the application.</para>
+      </summary>
+      <param name="applicationName">The application name. Specify this parameter if the UI Localization Client cannot automatically obtain the application name.</param>
+      <returns>An object that implements System.IDisposable.</returns>
+    </member>
+    <member name="M:DevExpress.Utils.Localization.XtraLocalizer.HandleAllThreadEvents">
+      <summary>
+        <para>Enables traking of all localization-related events from all threads in the application.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.Localization.XtraLocalizer.HandleRequestsFromAllThreads">
+      <summary>
+        <para>Allows to use <see href="https://docs.devexpress.com/GeneralInformation/404608/localization/localization#localization-related-api-localizer-objects">localizer objects</see> (including custom localizers) accross all application threads.</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedString">
+      <summary>
+        <para>Allows you to localize resources for all DevExpress UI controls in your application.</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringContainerResource">
+      <summary>
+        <para>Allows you to localize resources of data forms integrated in DevExpress UI controls.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringEventArgs">
+      <summary>
+        <para>Contains data for the <see cref="E:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedString"/>, <see cref="E:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringNonTranslated"/>, and <see cref="E:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringContainerResource"/> events.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringEventArgs.ContainerType">
+      <summary>
+        <para>Gets the type of a localizer object or data form shipped as part of a DevExpress UI control.</para>
+      </summary>
+      <value>The type of a localizer object or data form shipped as part of a DevExpress UI control.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringEventArgs.Culture">
+      <summary>
+        <para>Gets the culture name of <see cref="P:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringEventArgs.ResourceStringID"/>.</para>
+      </summary>
+      <value>The culture name (for example, “de-DE”).</value>
+    </member>
+    <member name="P:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringEventArgs.InvariantString">
+      <summary>
+        <para>Gets the culture-independent (invariant) resource string.</para>
+      </summary>
+      <value>The culture-independent resource string.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringEventArgs.IsTranslated">
+      <summary>
+        <para>Gets whether the resource string is localized (translated) for the current locale (culture).</para>
+      </summary>
+      <value>true if the resource string is localized (translated) for the current locale; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringEventArgs.ResourceStringID">
+      <summary>
+        <para>Gets the value of the enumeration member in <see cref="P:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringEventArgs.StringIDType"/> that corresponds to the processed resource string, or the value that uniquely identifies the form’s UI element/control.</para>
+      </summary>
+      <value>The value of the enumeration member in <see cref="P:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringEventArgs.StringIDType"/> that corresponds to the processed resource string.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringEventArgs.StringID">
+      <summary>
+        <para>Gets the enumeration member in <see cref="P:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringEventArgs.StringIDType"/> that corresponds to the processed resource string.</para>
+      </summary>
+      <value>The enumeration member in <see cref="P:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringEventArgs.StringIDType"/> that corresponds to the processed resource string.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringEventArgs.StringIDType">
+      <summary>
+        <para>Gets the type of the resource string identifier for DevExpress UI controls.</para>
+      </summary>
+      <value>The type of the resource string identifier (for example, DevExpress.XtraEditors.Controls.StringId).</value>
+    </member>
+    <member name="M:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringEventArgs.ToString">
+      <summary>
+        <para>Returns a string in the following format: {ResourceStringID}: “{Value}”/“{InvariantString”}.</para>
+      </summary>
+      <returns>The string representation of the current object (for example, GridStringId.MenuColumnSortAscending: &quot;Aufsteigend sortieren&quot;/&quot;Sort Ascending&quot;).</returns>
+    </member>
+    <member name="P:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringEventArgs.Value">
+      <summary>
+        <para>Gets or sets the resource string.</para>
+      </summary>
+      <value>The resource string.</value>
+    </member>
+    <member name="E:DevExpress.Utils.Localization.XtraLocalizer.QueryLocalizedStringNonTranslated">
+      <summary>
+        <para>Allows you to obtain resource strings that are not localized for the current locale (culture).</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Utils.Localization.XtraLocalizer.TraceSourceSize">
+      <summary>
+        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+      <value>1024 * 1024 * 32</value>
+    </member>
+    <member name="P:DevExpress.Utils.Localization.XtraLocalizer.UserResourceManager">
+      <summary>
+        <para>Gets or sets the resource manager.</para>
+      </summary>
+      <value>The resource manager.</value>
+    </member>
+    <member name="M:DevExpress.Utils.Localization.XtraLocalizer.WriteAllToXml(System.String)">
+      <summary>
+        <para>Writes resource strings to a file in XML format.</para>
+      </summary>
+      <param name="fileName">The file name.</param>
+    </member>
+    <member name="M:DevExpress.Utils.Localization.XtraLocalizer.WriteNonTranslatedToXml(System.String)">
+      <summary>
+        <para>Writes non-translated resource strings in the application to a file in XML format.</para>
+      </summary>
+      <param name="fileName">The file name.</param>
+    </member>
+    <member name="M:DevExpress.Utils.Localization.XtraLocalizer.WriteToXml(System.String,System.Collections.Generic.HashSet{System.String})">
+      <summary>
+        <para>Writes resource strings for the specified resource identifiers to a file in XML format.</para>
+      </summary>
+      <param name="fileName">The file name.</param>
+      <param name="resourceIds">The resource identifiers.</param>
+    </member>
     <member name="T:DevExpress.Utils.Localization.XtraLocalizer`1">
       <summary>
         <para>Represents the base class for all localizer classes.</para>
@@ -11295,6 +11979,43 @@
         <para>For internal use. Specifies the Y-coordinate of the <see cref="T:DevExpress.Utils.PointFloat"/> object.</para>
       </summary>
       <value>A <see cref="T:System.Single"/> value.</value>
+    </member>
+    <member name="T:DevExpress.Utils.PropertyAllowEventArgs">
+      <summary>
+        <para>Contains data for PropertySerializing and PropertyDeserializing events.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.PropertyAllowEventArgs.#ctor(DevExpress.Utils.OptionsLayoutBase,System.Object,System.String)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Utils.PropertyAllowEventArgs"/> class with specified settings.</para>
+      </summary>
+      <param name="optionsLayout">Control layout options. This value is assigned to the <see cref="P:DevExpress.Utils.PropertyAllowEventArgs.OptionsLayout"/> property.</param>
+      <param name="owner">The control or UI element whose layout settings are being serialized or deserialized. This value is assigned to the <see cref="P:DevExpress.Utils.PropertyAllowEventArgs.Owner"/> property.</param>
+      <param name="propertyName">The property name. This value is assigned to the <see cref="P:DevExpress.Utils.PropertyAllowEventArgs.PropertyName"/> property.</param>
+    </member>
+    <member name="P:DevExpress.Utils.PropertyAllowEventArgs.Allow">
+      <summary>
+        <para>Gets or sets whether to allow property serialization or deserialization.</para>
+      </summary>
+      <value>True, Default to allow property serialization or deserialization; otherwise, False.</value>
+    </member>
+    <member name="P:DevExpress.Utils.PropertyAllowEventArgs.OptionsLayout">
+      <summary>
+        <para>Gets layout settings of the control whose layout is being serialized or deserialized.</para>
+      </summary>
+      <value>Control layout settings.</value>
+    </member>
+    <member name="P:DevExpress.Utils.PropertyAllowEventArgs.Owner">
+      <summary>
+        <para>Gets the control or UI element whose layout settings are being serialized or deserialized.</para>
+      </summary>
+      <value>The control or UI element whose layout settings are being serialized or deserialized (for example GridControl, TreeList).</value>
+    </member>
+    <member name="P:DevExpress.Utils.PropertyAllowEventArgs.PropertyName">
+      <summary>
+        <para>Gets the property name currently being processed.</para>
+      </summary>
+      <value>The property name.</value>
     </member>
     <member name="N:DevExpress.Utils.Serializing.Helpers">
       <summary>
@@ -16728,6 +17449,51 @@
         <para>“Invalid text format“</para>
       </summary>
     </member>
+    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.Msg_InvalidEPCAmount">
+      <summary>
+        <para>“Incorrect transfer amount. The value must be between 0.01 and 999999999.99 EUR.“</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.Msg_InvalidEPCDataFormat">
+      <summary>
+        <para>“Invalid data format for the EPC QR Code.“</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.Msg_InvalidEPCEncoding">
+      <summary>
+        <para>“Incorrect enumeration value for the character set.“</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.Msg_InvalidEPCFieldBeneficiaryMissed">
+      <summary>
+        <para>“The name of the Beneficiary is a mandatory field.“</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.Msg_InvalidEPCFieldIBANMissed">
+      <summary>
+        <para>“The IBAN of the account of the Beneficiary is a mandatory field.“</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.Msg_InvalidEPCFieldLength">
+      <summary>
+        <para>“The length of {0} field value cannot exceed {1} characters.“</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.Msg_InvalidEPCFieldMandatoryField">
+      <summary>
+        <para>“Only one of the fields should be populated: (PaymentReference) or (RemittanceInformation).“</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.Msg_InvalidEPCFieldVer1BeneficiaryMissed">
+      <summary>
+        <para>“For Version 1, the BIC code of the Beneficiary is a mandatory field.“</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.Msg_InvalidEPCIncorrectVersion">
+      <summary>
+        <para>“Incorrect version. Use either 001 or 002.“</para>
+      </summary>
+    </member>
     <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.Msg_InvalidIntelligentMailBarcodeDataLength">
       <summary>
         <para>&quot;Text should have {0} characters.&quot;</para>
@@ -19209,7 +19975,7 @@
     </member>
     <member name="F:DevExpress.XtraPrinting.PrintingSystemCommand.Watermark">
       <summary>
-        <para>Invokes the Watermark dialog which can be used to specify either background text or a picture as a document’s watermark. Note that a document’s watermark can be accessed via the <see cref="P:DevExpress.XtraPrinting.PrintingSystemBase.Watermark">PrintingSystemBase.Watermark</see> property.</para>
+        <para>Invokes the Watermark dialog which can be used to specify either background text or a picture as a document’s watermark. Note that a document’s watermark can be accessed via the <see cref="P:DevExpress.XtraPrinting.PrintingSystemBase.Watermarks">PrintingSystemBase.Watermarks</see> property.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraPrinting.PrintingSystemCommand.Zoom">
@@ -19254,7 +20020,7 @@
     </member>
     <member name="T:DevExpress.XtraPrinting.TextAlignment">
       <summary>
-        <para>Specifies how the text associated with the control should be aligned.</para>
+        <para>Specifies the positioning of text within a control.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraPrinting.TextAlignment.BottomCenter">
@@ -19414,7 +20180,7 @@
     </member>
     <member name="N:DevExpress.XtraReports.Design">
       <summary>
-        <para>Provides the functionality that is necessary for deep customization of the <see href="https://docs.devexpress.com/XtraReports/1198/winforms-reporting">End-User Report Designer</see>.</para>
+        <para>Provides the functionality that is necessary for deep customization of the <see href="https://docs.devexpress.com/XtraReports/1198/desktop-reporting/winforms-reporting">End-User Report Designer</see>.</para>
       </summary>
     </member>
     <member name="T:DevExpress.XtraReports.Design.ShowComplexProperties">
@@ -19562,7 +20328,7 @@
     </member>
     <member name="T:DevExpress.XtraReports.Web.ReportDesigner.DataContracts.ReportPreviewSettings">
       <summary>
-        <para>Contains settings that apply to the <see href="https://docs.devexpress.com/XtraReports/17554/web-reporting/gui/document-preview">Report Designer Preview</see>.</para>
+        <para>Contains settings that apply to the <see href="https://docs.devexpress.com/XtraReports/17554/web-reporting/end-user-report-designer-for-web/document-preview">Report Designer Preview</see>.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraReports.Web.ReportDesigner.DataContracts.ReportPreviewSettings.#ctor">
@@ -19584,7 +20350,7 @@
     </member>
     <member name="P:DevExpress.XtraReports.Web.ReportDesigner.DataContracts.ReportPreviewSettings.SearchSettings">
       <summary>
-        <para>Allows you to specify the <see href="https://docs.devexpress.com/XtraReports/17554/web-reporting/gui/document-preview">Report Designer Preview</see>‘s search settings.</para>
+        <para>Allows you to specify the <see href="https://docs.devexpress.com/XtraReports/17554/web-reporting/end-user-report-designer-for-web/document-preview">Report Designer Preview</see>‘s search settings.</para>
       </summary>
       <value>A class that contains settings that apply to search operations.</value>
     </member>
@@ -19610,7 +20376,7 @@
     </member>
     <member name="T:DevExpress.XtraReports.Web.ReportDesigner.DataContracts.WizardSettings">
       <summary>
-        <para>Contains the <see href="https://docs.devexpress.com/XtraReports/17663/web-reporting/gui/wizards">Report Wizard</see> settings.</para>
+        <para>Contains the <see href="https://docs.devexpress.com/XtraReports/17663/web-reporting/end-user-report-designer-for-web/wizards">Report Wizard</see> settings.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraReports.Web.ReportDesigner.DataContracts.WizardSettings.#ctor">
@@ -19704,7 +20470,7 @@
       <summary>
         <para>Provides access to the Report Wizard settings.</para>
       </summary>
-      <value>A <see cref="T:DevExpress.XtraReports.Web.ReportDesigner.DataContracts.WizardSettings"/> object that contains the <see href="https://docs.devexpress.com/XtraReports/17663/web-reporting/gui/wizards">Report Wizard</see> settings.</value>
+      <value>A <see cref="T:DevExpress.XtraReports.Web.ReportDesigner.DataContracts.WizardSettings"/> object that contains the <see href="https://docs.devexpress.com/XtraReports/17663/web-reporting/end-user-report-designer-for-web/wizards">Report Wizard</see> settings.</value>
     </member>
     <member name="N:DevExpress.XtraReports.Web.WebDocumentViewer">
       <summary>
@@ -19762,13 +20528,13 @@
     </member>
     <member name="P:DevExpress.XtraReports.Web.WebDocumentViewer.DataContracts.MobileViewerSettings.AnimationEnabled">
       <summary>
-        <para>Specifies whether animation is enabled for actions in <see href="https://docs.devexpress.com/XtraReports/402348/web-reporting/mobile-viewer-ui">Mobile Mode</see>.</para>
+        <para>Specifies whether animation is enabled for actions in <see href="https://docs.devexpress.com/XtraReports/402351/web-reporting/asp-net-core-reporting/document-viewer-in-asp-net-applications/mobile-mode">Mobile Mode</see>.</para>
       </summary>
       <value>true, to enable animation; otherwise, false.</value>
     </member>
     <member name="P:DevExpress.XtraReports.Web.WebDocumentViewer.DataContracts.MobileViewerSettings.ReaderMode">
       <summary>
-        <para>Specifies whether the <see href="https://docs.devexpress.com/XtraReports/402348/web-reporting/mobile-viewer-ui">Mobile Viewer</see> operates in Reader Mode in which  document pages are displayed without borders.</para>
+        <para>Specifies whether the <see href="https://docs.devexpress.com/XtraReports/402351/web-reporting/asp-net-core-reporting/document-viewer-in-asp-net-applications/mobile-mode">Mobile Viewer</see> operates in Reader Mode in which  document pages are displayed without borders.</para>
       </summary>
       <value>true, to enable Reader Mode; otherwise, false.</value>
     </member>
@@ -19925,9 +20691,9 @@
     </member>
     <member name="P:DevExpress.XtraReports.Web.WebDocumentViewer.WebDocumentViewerSettingsBase.RightToLeft">
       <summary>
-        <para>Enables or disables a right-to-left layout in the Web Report Designer user interface.</para>
+        <para>Enables or disables a right-to-left layout in the Web Document Viewer user interface.</para>
       </summary>
-      <value>true to enable the right-to-left layout in the Report Designer UI; otherwise, false.</value>
+      <value>true to enable the right-to-left layout in the Document Viewer UI; otherwise, false.</value>
     </member>
     <member name="P:DevExpress.XtraReports.Web.WebDocumentViewer.WebDocumentViewerSettingsBase.SearchSettings">
       <summary>

@@ -1,7 +1,7 @@
 ﻿<Window x:Class="QuanLyKaraoke.ManHinhThemPhongHat"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Thêm phòng hát" Height="300" Width="399" WindowStartupLocation="CenterOwner"  WindowStyle="ToolWindow" Loaded="Window_Loaded">
+        Title="Thêm phòng hát" Height="300" Width="399" WindowStartupLocation="CenterScreen"  WindowStyle="ToolWindow" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
